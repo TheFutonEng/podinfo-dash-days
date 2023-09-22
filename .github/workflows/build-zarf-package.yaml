@@ -9,9 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # - name: Install Dagger CLI
-      #   run: cd /usr/local && { curl -L https://dl.dagger.io/dagger/install.sh | sh; cd -; }
       - name: Get dpt
         run: curl -sLO https://github.com/TheFutonEng/dagger-dash-days/releases/download/v0.0.1/dagger-dash-days_v0.0.1_Linux_amd64 && chmod +x dagger-dash-days_v0.0.1_Linux_amd64
-      - name: Run Dagger pipeline
+      - name: Package creation
         run: ./dagger-dash-days_v0.0.1_Linux_amd64 package create
